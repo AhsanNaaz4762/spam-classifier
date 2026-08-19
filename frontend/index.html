@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SpamGuard AI | SMS Spam Detection</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Background -->
+    <div class="background">
+        <div class="glow glow-one"></div>
+        <div class="glow glow-two"></div>
+    </div>
+
+    <!-- Main Container -->
+    <main class="container">
+
+        <!-- Header -->
+        <header class="header">
+
+            <div class="brand">
+                <div class="brand-icon">
+                    🛡️
+                </div>
+
+                <div>
+                    <h1>SpamGuard <span>AI</span></h1>
+                    <p>Intelligent SMS Spam Detection</p>
+                </div>
+            </div>
+
+            <div class="api-status">
+                <span class="status-dot"></span>
+                <span>API Online</span>
+            </div>
+
+        </header>
+
+
+        <!-- Hero -->
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <span class="badge">AI-POWERED SECURITY</span>
+
+                <h2>
+                    Detect spam messages
+                    <br>
+                    <span>before they reach you.</span>
+                </h2>
+
+                <p>
+                    Enter an SMS message below and let our machine learning
+                    model determine whether it's safe or spam.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Analyzer Card -->
+        <section class="analyzer-card">
+
+            <div class="card-header">
+
+                <div>
+                    <h3>Analyze Message</h3>
+                    <p>Paste or type an SMS message to analyze it.</p>
+                </div>
+
+                <div class="shield-icon">
+                    🔐
+                </div>
+
+            </div>
+
+
+            <!-- Message Input -->
+            <div class="input-container">
+
+                <label for="message">
+                    SMS MESSAGE
+                </label>
+
+                <textarea
+                    id="message"
+                    placeholder="Example: Congratulations! You have won a free prize. Click here to claim..."
+                    maxlength="1000"
+                ></textarea>
+
+                <div class="input-footer">
+                    <span id="character-count">0 / 1000</span>
+                </div>
+
+            </div>
+
+
+            <!-- Buttons -->
+            <div class="actions">
+
+                <button id="analyze-btn" class="analyze-btn">
+                    <span class="btn-icon">🔍</span>
+                    Analyze Message
+                </button>
+
+                <button id="clear-btn" class="clear-btn">
+                    Clear
+                </button>
+
+            </div>
+
+
+            <!-- Loading -->
+            <div id="loading" class="loading hidden">
+
+                <div class="spinner"></div>
+
+                <div>
+                    <strong>Analyzing message...</strong>
+                    <p>Our AI model is checking the message.</p>
+                </div>
+
+            </div>
+
+
+            <!-- Result -->
+            <div id="result" class="result hidden">
+
+                <div class="result-top">
+
+                    <div class="result-icon" id="result-icon">
+                        ✓
+                    </div>
+
+                    <div>
+                        <span class="result-label">
+                            PREDICTION
+                        </span>
+
+                        <h3 id="result-title">
+                            Not Spam
+                        </h3>
+                    </div>
+
+                </div>
+
+
+                <!-- Confidence -->
+                <div class="confidence-section">
+
+                    <div class="confidence-header">
+
+                        <span>Confidence</span>
+
+                        <strong id="confidence">
+                            0%
+                        </strong>
+
+                    </div>
+
+                    <div class="progress-bar">
+                        <div
+                            id="progress"
+                            class="progress"
+                            style="width: 0%"
+                        ></div>
+                    </div>
+
+                </div>
+
+
+                <!-- Result Description -->
+                <p id="result-description" class="result-description">
+                    This message appears to be safe.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Statistics -->
+        <section class="stats">
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    📊
+                </div>
+
+                <div>
+                    <span>MESSAGES ANALYZED</span>
+                    <strong id="total-messages">0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🚨
+                </div>
+
+                <div>
+                    <span>SPAM DETECTED</span>
+                    <strong id="spam-count">0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🛡️
+                </div>
+
+                <div>
+                    <span>SAFE MESSAGES</span>
+                    <strong id="safe-count">0</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Recent History -->
+        <section class="history-card">
+
+            <div class="history-header">
+
+                <div>
+                    <h3>Recent Analysis</h3>
+                    <p>Your latest message predictions.</p>
+                </div>
+
+                <button id="clear-history">
+                    Clear History
+                </button>
+
+            </div>
+
+
+            <div id="history-list" class="history-list">
+
+                <div class="empty-history">
+                    <div>📭</div>
+                    <p>No messages analyzed yet.</p>
+                    <span>Your analysis history will appear here.</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Footer -->
+        <footer>
+
+            <p>
+                SpamGuard AI • Machine Learning SMS Classification
+            </p>
+
+            <span>
+                Built with Python • FastAPI • Machine Learning
+            </span>
+
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
